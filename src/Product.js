@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
+import { API_HOST } from './constants';
 
 function Product(props) {
     const [addedFlag, setaddedFlag] = useState(false)
     function addToCart(){
         setaddedFlag(true)
-        fetch("http://127.0.0.1:8000/productuser", {
+        fetch(API_HOST + "/productuser", {
               method: "POST",
               body: JSON.stringify({
                 ProductId: props.ProductId,
@@ -15,7 +16,7 @@ function Product(props) {
     }
 
     if(localStorage.getItem('token') != null){
-        fetch("http://127.0.0.1:8000/productusercheck/" + localStorage.getItem('token') + "/" + props.ProductId)
+        fetch(API_HOST + "/productusercheck/" + localStorage.getItem('token') + "/" + props.ProductId)
         .then((res) => res.json())
         .then((data) => {
             console.log(data.isAdded == "True")

@@ -2,6 +2,7 @@ import React ,{useState, useEffect} from 'react';
 import './ProductsPage.css';
 import Footer from './Footer';
 import Product from './Product';
+import { API_HOST } from './constants';
 
 function ProductsPage() {
 
@@ -21,7 +22,7 @@ function ProductsPage() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/products")
+        fetch(API_HOST + "/products")
         .then((res) => res.json())
         .then((data) => {
             setData(data);
@@ -34,9 +35,9 @@ function ProductsPage() {
 
     function removeProduct(productId = 0){
         console.log("id", productId)
-        fetch("http://127.0.0.1:8000/products/" + productId, { method: 'DELETE' })
+        fetch(API_HOST + "/products/" + productId, { method: 'DELETE' })
             .then(() => {
-                fetch("http://127.0.0.1:8000/products")
+                fetch(API_HOST + "/products")
                 .then((res) => res.json())
                 .then((data) => {
                     setData(data);

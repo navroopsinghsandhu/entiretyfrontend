@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import './Form.css';
 // import axios from 'axios';
+import { API_HOST } from './constants';
 
 function AddProductsPage() {
 
@@ -56,7 +57,7 @@ function AddProductsPage() {
         setError(false);
         console.log(ProductName, ProductPrice, ProductPhotoFileName);
         // try {
-            fetch("http://127.0.0.1:8000/products", {
+            fetch(API_HOST + "/products", {
               method: "POST",
               body: JSON.stringify({
                 ProductPhotoFileName: "sample.jpg",

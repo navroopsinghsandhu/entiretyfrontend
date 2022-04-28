@@ -2,6 +2,7 @@ import React from 'react';
 import './Cart.css';
 import {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_HOST } from './constants';
 
 // Will take in Product name and price
 function Cart(props) {
@@ -51,7 +52,7 @@ function Cart(props) {
     let totalPrice = data.map(item => item.ProductPrice).reduce((a, b) => a + b, 0);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/productuser/" + localStorage.getItem('token'))
+        fetch(API_HOST + "/productuser/" + localStorage.getItem('token'))
         .then((res) => res.json())
         .then((data) => {
             let cartProducts = []
@@ -67,10 +68,10 @@ function Cart(props) {
     }, []);
 
     function removeProduct(productId = 0){
-        fetch("http://127.0.0.1:8000/productuser/" + localStorage.getItem('token') + '/' + productId, { method: 'DELETE' })
+        fetch(API_HOST + "/productuser/" + localStorage.getItem('token') + '/' + productId, { method: 'DELETE' })
             .then(() => {
 
-                fetch("http://127.0.0.1:8000/productuser/" + localStorage.getItem('token'))
+                fetch(API_HOST + "/productuser/" + localStorage.getItem('token'))
         .then((res) => res.json())
         .then((data) => {
             let cartProducts = []

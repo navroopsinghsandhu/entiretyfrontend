@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Form.css';
+import { API_HOST } from './constants';
 
 function Login({ setToken }) {
     const [errorMessages, setErrorMessages] = useState({});
@@ -25,7 +26,7 @@ function Login({ setToken }) {
 
 
     let database;
-    let fetchRes = fetch("http://127.0.0.1:8000/user");
+    let fetchRes = fetch(API_HOST + "/user");
     fetchRes.then(res =>
         res.json()).then(users => {
             console.log(users)
@@ -56,7 +57,7 @@ function Login({ setToken }) {
       //     setIsSubmitted(true);
           // Redirect to User's home page with products list
         
-        fetch("http://127.0.0.1:8000/login", {
+        fetch(API_HOST + "/login", {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

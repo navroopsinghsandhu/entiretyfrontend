@@ -1,6 +1,7 @@
 // import React from 'react';
 import React, {useState} from 'react';
 import './Form.css';
+import { API_HOST } from './constants';
 
 function Register() {
 
@@ -55,7 +56,7 @@ function Register() {
         setError(false);
         console.log(firstName, lastName, userName, password, wantMembership);
         // try {
-            fetch("http://127.0.0.1:8000/user", {
+            fetch(API_HOST + "/user", {
               method: "POST",
               body: JSON.stringify({
                 UserName: userName,
