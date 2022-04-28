@@ -1,1 +1,1 @@
-export const API_HOST = "https://letsgoworksbackend-navroopsinghsandhu.vercel.app" 
+export const API_HOST = "http://navroops0432.pythonanywhere.com/" 
