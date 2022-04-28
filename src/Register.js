@@ -140,11 +140,11 @@ function Register() {
         <label className="label">Password</label>
         <input onChange={handlePassword} className="input"
             value={password} type="password" />
-        <div className="label">
+        {/* <div className="label">
         <label>Register as a member</label>
         <input  style={{ marginLeft:10}} onChange={handleMembership} className="input"
             value={wantMembership} type="checkbox" />
-        </div>
+        </div> */}
         <button onClick={handleSubmit} className="btn_register" type="submit">
             Submit
         </button>
