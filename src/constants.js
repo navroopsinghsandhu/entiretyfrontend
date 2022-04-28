@@ -1,1 +1,1 @@
-export const API_HOST = "https://letsgoworksbackend.vercel.app" 
+export const API_HOST = "https://letsgoworksbackend-navroopsinghsandhu.vercel.app" 
