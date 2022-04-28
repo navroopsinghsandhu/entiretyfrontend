@@ -1,1 +1,1 @@
-export const API_HOST = "http://navroops0432.pythonanywhere.com" 
+export const API_HOST = "https://navroops0432.pythonanywhere.com" 
