@@ -1,4 +1,4 @@
-#entiretybackend
+# entiretyfrontend
 
 Deployed instance :
 https://entiretyfrontend-kxsg7sxda-navroopsinghsandhu.vercel.app
