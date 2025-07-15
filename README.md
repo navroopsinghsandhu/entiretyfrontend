@@ -1,7 +1,7 @@
 # entiretyfrontend
 
 Deployed instance :
-https://entiretyfrontend-kxsg7sxda-navroopsinghsandhu.vercel.app
+https://entiretyfrontend-3c2jq79b1-navroopsinghsandhus-projects.vercel.app
 
 Parent repository:
 https://github.com/navroopsinghsandhu/EntiretyWebApp
